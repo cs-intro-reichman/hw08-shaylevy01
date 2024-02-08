@@ -205,15 +205,20 @@ class PlayList {
     public void sortedInPlace() {
         // Uses the selection sort algorithm,  
         // calling the minIndex method in each iteration.
-        //// replace this statement with your code
-        PlayList newPlayList = new PlayList(this.maxSize);
-        newPlayList.maxSize = this.maxSize;
-        newPlayList.size = this.size;
+        // //// replace this statement with your code
+        // PlayList newPlayList = new PlayList(this.maxSize);
+        // newPlayList.maxSize = this.maxSize;
+        // newPlayList.size = this.size;
+        // for (int i = 0 ; i < size ; i++){
+        //     newPlayList.tracks[i] = this.tracks[minIndex(0)];
+        //     String minTitle = this.tracks[minIndex(0)].getTitle();
+        //     this.remove(minTitle);
+        // }
+        // this.tracks = newPlayList;
         for (int i = 0 ; i < size ; i++){
-            newPlayList.tracks[i] = this.tracks[minIndex(0)];
-            String minTitle = this.tracks[minIndex(0)].getTitle();
-            this.remove(minTitle);
+            Track minTrack = tracks[minIndex(0)];
+            remove(minTrack.getTitle());
+            add(i, minTrack);
         }
-        this.tracks = newPlayList.tracks;
     }
 }
