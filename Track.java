@@ -15,8 +15,6 @@ class Track {
     /** Returns this track's data as "artist, title, minutes:seconds".
      *  For example, "John Lennon, Imagine, 3:07" */
     public String toString() {
-        //// Replace the following statement with code that returns
-        //// the data of this track according to the method's documentation.
         String Duration = formattedDuration(duration);
         return artist + ", " + title + ", " + Duration;
     }

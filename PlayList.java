@@ -194,7 +194,6 @@ class PlayList {
     public void sortedInPlace() {
         // Uses the selection sort algorithm,  
         // calling the minIndex method in each iteration.
-        // replace this statement with your code
         for (int i = 0 ; i < size ; i++){
             Track minTrack = tracks[minIndex(i)];
             remove(minTrack.getTitle());
