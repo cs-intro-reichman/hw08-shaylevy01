@@ -133,7 +133,7 @@ class PlayList {
         //// replace this comment with your code
         if (size != 0){
             for (int i = 0 ; i < size ; i++){
-                if (title.toLowerCase() == tracks[i].getTitle().toLowerCase()){
+                if (title.toLowerCase().equals(tracks[i].getTitle().toLowerCase())){
                     for (int j = i ; j < size ; j++){
                         tracks[j] = tracks[j+1];
                     }
