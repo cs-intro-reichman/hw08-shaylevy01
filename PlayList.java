@@ -35,7 +35,6 @@ class PlayList {
      *  If the list is full, does nothing and returns false.
      *  Otherwise, appends the track and returns true. */
     public boolean add(Track track) {
-        //// replace the following statement with your code
         if (size == maxSize){
             return false;
         } else {
@@ -48,7 +47,6 @@ class PlayList {
     /** Returns the data of this list, as a string. Each track appears in a separate line. */
     //// For an efficient implementation, use StringBuilder.
     public String toString() {
-        //// replace the following statement with your code
         String playlist = "";
         for (int i = 0 ; i < size ; i++){
             playlist = playlist + tracks[i].toString() + "/n";
@@ -58,7 +56,6 @@ class PlayList {
 
     /** Removes the last track from this list. If the list is empty, does nothing. */
      public void removeLast() {
-        //// replace this comment with your code
         if (size != 0){
             tracks[size-1] = tracks[size];
             size--;
@@ -67,7 +64,6 @@ class PlayList {
     
     /** Returns the total duration (in seconds) of all the tracks in this list.*/
     public int totalDuration() {
-        //// replace the following statement with your code
         int totalDuration = 0;
         for (int i = 0 ; i < size ; i++){
             totalDuration = totalDuration + tracks[i].getDuration();
@@ -78,7 +74,6 @@ class PlayList {
     /** Returns the index of the track with the given title in this list.
      *  If such a track is not found, returns -1. */
     public int indexOf(String title) {
-        //// replace the following statement with your code
         for (int i = 0 ; i < size ; i++){
             if (title.toLowerCase().equals(tracks[i].getTitle().toLowerCase())){
                 return i;
@@ -94,7 +89,6 @@ class PlayList {
      *  is full, does nothing and returns false. Otherwise, inserts the track and
      *  returns true. */
     public boolean add(int i, Track track) {
-        //// replace the following statement with your code
         if (i < 0 || i > maxSize ||size == maxSize){
             return false;
         } else {
@@ -117,7 +111,6 @@ class PlayList {
      *  If the list is empty, or the given index is negative or too big for this list, 
      *  does nothing and returns -1. */
     public void remove(int i) {
-        //// replace this comment with your code
         if (size != 0 && i >= 0 && i <= maxSize){
             for (int j = i ; j < size ; j++){
                 tracks[j] = tracks[j+1];
@@ -130,7 +123,6 @@ class PlayList {
      *  If such a track is not found, or the list is empty, or the given index
      *  is negative or too big for this list, does nothing. */
     public void remove(String title) {
-        //// replace this comment with your code
         if (size != 0){
             for (int i = 0 ; i < size ; i++){
                 if (title.toLowerCase().equals(tracks[i].getTitle().toLowerCase())){
@@ -145,7 +137,6 @@ class PlayList {
 
     /** Removes the first track from this list. If the list is empty, does nothing. */
     public void removeFirst() {
-        //// replace this comment with your code
         if (size != 0){
             for (int i = 0 ; i < size ; i++){
                 tracks[i] = tracks[i+1];
@@ -158,7 +149,6 @@ class PlayList {
      *  If the total size of both lists is too large, does nothing. */
     //// An elegant and terribly inefficient implementation.
      public void add(PlayList other) {
-        //// replace this comment with your code
         int j = 0;
         if (other.size + this.size <= this.maxSize){
             for (int i = this.size ; i < other.size + this.size ; i++){
@@ -176,7 +166,6 @@ class PlayList {
      *  If start is negative or greater than size - 1, returns -1.
      */
     private int minIndex(int start) {
-        //// replace the following statement with your code
         if (start < 0 || start > size-1){
             return -1;
         } else {
@@ -205,20 +194,11 @@ class PlayList {
     public void sortedInPlace() {
         // Uses the selection sort algorithm,  
         // calling the minIndex method in each iteration.
-        // //// replace this statement with your code
-        // PlayList newPlayList = new PlayList(this.maxSize);
-        // newPlayList.maxSize = this.maxSize;
-        // newPlayList.size = this.size;
-        // for (int i = 0 ; i < size ; i++){
-        //     newPlayList.tracks[i] = this.tracks[minIndex(0)];
-        //     String minTitle = this.tracks[minIndex(0)].getTitle();
-        //     this.remove(minTitle);
-        // }
-        // this.tracks = newPlayList;
+        // replace this statement with your code
         for (int i = 0 ; i < size ; i++){
-            Track minTrack = tracks[minIndex(0)];
+            Track minTrack = tracks[minIndex(i)];
             remove(minTrack.getTitle());
             add(i, minTrack);
-        }
+        } 
     }
 }
